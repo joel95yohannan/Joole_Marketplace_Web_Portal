@@ -1,0 +1,10 @@
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\bin\Debug\JooleDB.dacpac
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\JooleDB.sqlproj.AssemblyReference.cache
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\JooleDB.dll
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\JooleDB.pdb
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\bin\Debug\JooleDB.dll
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\bin\Debug\JooleDB.pdb
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\Model.xml
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\refactor.xml
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\postdeploy.sql
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\MVC_TEAM_Joole\JooleDB\obj\Debug\predeploy.sql
