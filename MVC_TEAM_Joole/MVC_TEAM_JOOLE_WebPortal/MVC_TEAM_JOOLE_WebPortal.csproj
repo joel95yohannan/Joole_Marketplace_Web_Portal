@@ -133,6 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\JooleModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,7 +157,16 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>JooleModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specification.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategory.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblUser.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Type.cs">
       <DependentUpon>JooleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -40,100 +40,6 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Dropping Foreign Key [dbo].[FK_dbo.Product_dbo.Manufacturer_ManufacturerID]...';
-
-
-GO
-ALTER TABLE [dbo].[Product] DROP CONSTRAINT [FK_dbo.Product_dbo.Manufacturer_ManufacturerID];
-
-
-GO
-PRINT N'Dropping Foreign Key [dbo].[FK_dbo.Product_dbo.SubCategory_SubcategoryID]...';
-
-
-GO
-ALTER TABLE [dbo].[Product] DROP CONSTRAINT [FK_dbo.Product_dbo.SubCategory_SubcategoryID];
-
-
-GO
-PRINT N'Dropping Foreign Key [dbo].[FK_dbo.Specification_dbo.Product_ProductID]...';
-
-
-GO
-ALTER TABLE [dbo].[Specification] DROP CONSTRAINT [FK_dbo.Specification_dbo.Product_ProductID];
-
-
-GO
-PRINT N'Dropping Foreign Key [dbo].[FK_dbo.Subcategory_dbo.Category_CategoryID]...';
-
-
-GO
-ALTER TABLE [dbo].[SubCategory] DROP CONSTRAINT [FK_dbo.Subcategory_dbo.Category_CategoryID];
-
-
-GO
-PRINT N'Dropping Foreign Key [dbo].[FK_dbo.Type_dbo.Product_ProductID]...';
-
-
-GO
-ALTER TABLE [dbo].[Type] DROP CONSTRAINT [FK_dbo.Type_dbo.Product_ProductID];
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Product_dbo.Manufacturer_ManufacturerID]...';
-
-
-GO
-ALTER TABLE [dbo].[Product] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Product_dbo.Manufacturer_ManufacturerID] FOREIGN KEY ([ManufacturerID]) REFERENCES [dbo].[Manufacturer] ([ManufacturerID]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Product_dbo.SubCategory_SubcategoryID]...';
-
-
-GO
-ALTER TABLE [dbo].[Product] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Product_dbo.SubCategory_SubcategoryID] FOREIGN KEY ([SubcategoryID]) REFERENCES [dbo].[SubCategory] ([SubcategoryID]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Specification_dbo.Product_ProductID]...';
-
-
-GO
-ALTER TABLE [dbo].[Specification] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Specification_dbo.Product_ProductID] FOREIGN KEY ([ProductID]) REFERENCES [dbo].[Product] ([ProductID]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Subcategory_dbo.Category_CategoryID]...';
-
-
-GO
-ALTER TABLE [dbo].[SubCategory] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Subcategory_dbo.Category_CategoryID] FOREIGN KEY ([CategoryID]) REFERENCES [dbo].[Category] ([CategoryID]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Type_dbo.Product_ProductID]...';
-
-
-GO
-ALTER TABLE [dbo].[Type] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Type_dbo.Product_ProductID] FOREIGN KEY ([ProductID]) REFERENCES [dbo].[Product] ([ProductID]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_dbo.Type_dbo.SubCategory_SubcategoryID]...';
-
-
-GO
-ALTER TABLE [dbo].[Type] WITH NOCHECK
-    ADD CONSTRAINT [FK_dbo.Type_dbo.SubCategory_SubcategoryID] FOREIGN KEY ([SubcategoryID]) REFERENCES [dbo].[SubCategory] ([SubcategoryID]);
-
-
-GO
 /*
 Post-Deployment Script Template							
 --------------------------------------------------------------------------------------
@@ -248,28 +154,6 @@ INSERT (MinValue, MaxValue, ProductID, SubcategoryID)
 VALUES (MinValue, MaxValue, ProductID, SubcategoryID);
 
 GO
-
-GO
-PRINT N'Checking existing data against newly created constraints';
-
-
-GO
-USE [$(DatabaseName)];
-
-
-GO
-ALTER TABLE [dbo].[Product] WITH CHECK CHECK CONSTRAINT [FK_dbo.Product_dbo.Manufacturer_ManufacturerID];
-
-ALTER TABLE [dbo].[Product] WITH CHECK CHECK CONSTRAINT [FK_dbo.Product_dbo.SubCategory_SubcategoryID];
-
-ALTER TABLE [dbo].[Specification] WITH CHECK CHECK CONSTRAINT [FK_dbo.Specification_dbo.Product_ProductID];
-
-ALTER TABLE [dbo].[SubCategory] WITH CHECK CHECK CONSTRAINT [FK_dbo.Subcategory_dbo.Category_CategoryID];
-
-ALTER TABLE [dbo].[Type] WITH CHECK CHECK CONSTRAINT [FK_dbo.Type_dbo.Product_ProductID];
-
-ALTER TABLE [dbo].[Type] WITH CHECK CHECK CONSTRAINT [FK_dbo.Type_dbo.SubCategory_SubcategoryID];
-
 
 GO
 PRINT N'Update complete.';
