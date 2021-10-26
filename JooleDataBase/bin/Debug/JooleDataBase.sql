@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "JooleDataBase"
 :setvar DefaultFilePrefix "JooleDataBase"
-:setvar DefaultDataPath "C:\Users\david\AppData\Local\Microsoft\VisualStudio\SSDT\JooleDataBase"
-:setvar DefaultLogPath "C:\Users\david\AppData\Local\Microsoft\VisualStudio\SSDT\JooleDataBase"
+:setvar DefaultDataPath "C:\Users\joel9\AppData\Local\Microsoft\VisualStudio\SSDT\JooleDataBase"
+:setvar DefaultLogPath "C:\Users\joel9\AppData\Local\Microsoft\VisualStudio\SSDT\JooleDataBase"
 
 GO
 :on error exit
@@ -37,30 +37,6 @@ IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
 
 GO
 USE [$(DatabaseName)];
-
-
-GO
-PRINT N'Creating Table [dbo].[tblSpecification]...';
-
-
-GO
-CREATE TABLE [dbo].[tblSpecification] (
-    [TypeID]        INT             NOT NULL,
-    [MinValue]      DECIMAL (18, 2) NULL,
-    [MaxValue]      DECIMAL (18, 2) NULL,
-    [ProductID]     INT             NOT NULL,
-    [SubcategoryID] INT             NOT NULL,
-    PRIMARY KEY CLUSTERED ([TypeID] ASC)
-);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_tblSpecification_tblProduct]...';
-
-
-GO
-ALTER TABLE [dbo].[tblSpecification] WITH NOCHECK
-    ADD CONSTRAINT [FK_tblSpecification_tblProduct] FOREIGN KEY ([ProductID]) REFERENCES [dbo].[tblProduct] ([ProductID]);
 
 
 GO
@@ -88,25 +64,6 @@ ON Target.UserID = Source.UserID
 WHEN NOT MATCHED BY TARGET THEN 
 INSERT (UserID, UserName, UserEmail, UserPassword, UserImage) 
 VALUES (UserID, UserName, UserEmail, UserPassword, UserImage);
-
-MERGE INTO tblProduct AS Target
-USING (VALUES 
-        (1, 'X FAN', NULL, 'Haiku H', NULL, 'S3-1508', 2015, 3, 1, 3),
-        (2, 'Pro Fan', NULL, 'Tim C', NULL, 'EE-0130', 2017, 1, 1, 5),
-        (3, '1967 Fan', NULL, 'Della J', NULL, 'JL0815', 2021, 2, 1, 1),
-        (4, 'Sanko V6 Vacuum', NULL, 'Sanko V6', NULL, 'SK-6731', 2016, 5, 2, 3),
-        (5, 'Shark UL Vacuum', NULL, 'Shark I8', NULL, 'SH789', 2017, 4, 2, 4),
-        (6, 'Wing F9 Vacuum', NULL, 'Wing F9', NULL, 'W99', 2019, 6, 2, 2),
-        (7, 'Snko 41 Toasters', NULL, 'Sanko 41', NULL, 'SK-11-97', 2018, 5, 3, 5),
-        (8, 'Pluto i9 Vaccum', NULL, 'Pluto 19', NULL, 'PL-1022', 2018, 1, 3, 2),
-        (9, 'Bob Vaccum', NULL, 'BB 01', NULL, 'BB01', 2016, 7, 3, 1)
-)
-AS Source (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID)
-ON Target.ProductID = Source.ProductID
-WHEN NOT MATCHED BY TARGET THEN
-INSERT (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID)
-VALUES (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID);
-
 
 MERGE INTO tblManufacturer AS Target
 USING (VALUES 
@@ -167,6 +124,24 @@ INSERT (TypeID, TypeName, TypeOption, ProductID, SubCategoryID)
 VALUES (TypeID, TypeName, TypeOption, ProductID, SubCategoryID);
 
 
+MERGE INTO tblProduct AS Target
+USING (VALUES 
+        (1, 'X FAN', NULL, 'Haiku H', NULL, 'S3-1508', 2015, 3, 1, 3),
+        (2, 'Pro Fan', NULL, 'Tim C', NULL, 'EE-0130', 2017, 1, 1, 5),
+        (3, '1967 Fan', NULL, 'Della J', NULL, 'JL0815', 2021, 2, 1, 1),
+        (4, 'Sanko V6 Vacuum', NULL, 'Sanko V6', NULL, 'SK-6731', 2016, 5, 2, 3),
+        (5, 'Shark UL Vacuum', NULL, 'Shark I8', NULL, 'SH789', 2017, 4, 2, 4),
+        (6, 'Wing F9 Vacuum', NULL, 'Wing F9', NULL, 'W99', 2019, 6, 2, 2),
+        (7, 'Snko 41 Toasters', NULL, 'Sanko 41', NULL, 'SK-11-97', 2018, 5, 3, 5),
+        (8, 'Pluto i9 Vaccum', NULL, 'Pluto 19', NULL, 'PL-1022', 2018, 1, 3, 2),
+        (9, 'Bob Vaccum', NULL, 'BB 01', NULL, 'BB01', 2016, 7, 3, 1)
+)
+AS Source (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID)
+ON Target.ProductID = Source.ProductID
+WHEN NOT MATCHED BY TARGET THEN
+INSERT (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID)
+VALUES (ProductID, ProductName, ProductImage, Series, SeriesInfo, Model, ModelYear, ManufacturerID, SubCategoryID, UserID);
+
 MERGE INTO tblSpecification AS Target
 USING (VALUES 
         (1, 1.00, 50.00, 1, 1), 
@@ -183,18 +158,6 @@ VALUES (TypeID, MinValue, MaxValue, ProductID, SubCategoryID);
 
 
 GO
-
-GO
-PRINT N'Checking existing data against newly created constraints';
-
-
-GO
-USE [$(DatabaseName)];
-
-
-GO
-ALTER TABLE [dbo].[tblSpecification] WITH CHECK CHECK CONSTRAINT [FK_tblSpecification_tblProduct];
-
 
 GO
 PRINT N'Update complete.';
