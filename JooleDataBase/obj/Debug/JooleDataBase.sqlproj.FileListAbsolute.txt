@@ -1,0 +1,6 @@
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.dacpac
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.dll
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.pdb
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.sqlproj.AssemblyReference.cache
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.dll
+C:\Users\david\Desktop\ICC\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.pdb
