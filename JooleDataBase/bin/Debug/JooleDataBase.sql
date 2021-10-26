@@ -40,6 +40,24 @@ USE [$(DatabaseName)];
 
 
 GO
+PRINT N'Creating Foreign Key [dbo].[FK_tblType_tblProduct]...';
+
+
+GO
+ALTER TABLE [dbo].[tblType] WITH NOCHECK
+    ADD CONSTRAINT [FK_tblType_tblProduct] FOREIGN KEY ([ProductID]) REFERENCES [dbo].[tblProduct] ([ProductID]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_tblType_tblSubCategory]...';
+
+
+GO
+ALTER TABLE [dbo].[tblType] WITH NOCHECK
+    ADD CONSTRAINT [FK_tblType_tblSubCategory] FOREIGN KEY ([SubCategoryID]) REFERENCES [dbo].[tblSubCategory] ([SubCategoryID]);
+
+
+GO
 /*
 Post-Deployment Script Template							
 --------------------------------------------------------------------------------------
@@ -158,6 +176,20 @@ VALUES (TypeID, MinValue, MaxValue, ProductID, SubCategoryID);
 
 
 GO
+
+GO
+PRINT N'Checking existing data against newly created constraints';
+
+
+GO
+USE [$(DatabaseName)];
+
+
+GO
+ALTER TABLE [dbo].[tblType] WITH CHECK CHECK CONSTRAINT [FK_tblType_tblProduct];
+
+ALTER TABLE [dbo].[tblType] WITH CHECK CHECK CONSTRAINT [FK_tblType_tblSubCategory];
+
 
 GO
 PRINT N'Update complete.';
