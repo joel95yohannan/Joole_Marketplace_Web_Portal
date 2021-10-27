@@ -1,0 +1,28 @@
+﻿@model List<Joole_MVC_Core.POCOClasses.UserUI>
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login Working Joole</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => user.UserID)</td>
+                <td>@Html.DisplayFor(modelItem => user.UserName)</td>
+                <td>@Html.DisplayFor(modelItem => user.UserEmail)</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

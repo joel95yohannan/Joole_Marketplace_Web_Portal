@@ -1,6 +1,0 @@
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\bin\Debug\Joole.Repo.dll
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\bin\Debug\Joole.Repo.pdb
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\obj\Debug\Joole.Repo.csproj.AssemblyReference.cache
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\obj\Debug\Joole.Repo.csproj.CoreCompileInputs.cache
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\obj\Debug\Joole.Repo.dll
-C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Repo\obj\Debug\Joole.Repo.pdb

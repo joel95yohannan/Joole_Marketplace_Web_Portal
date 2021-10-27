@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JooleDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblManufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" Nullable="false" />
+    <Property Name="ManufacturerName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductImage" Type="image" />
+    <Property Name="Series" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SeriesInfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModelYear" Type="int" Nullable="false" />
+    <Property Name="ManufacturerID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSpecification">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="MinValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MaxValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SubcategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSubcategory">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeOption" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserImage" Type="image" />
+  </EntityType>
+  <Association Name="FK_tblProduct_tblManufacturer">
+    <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblManufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="tblProduct">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduct_tblSubCategory">
+    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubcategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tblProduct">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduct_tblUser">
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblProduct">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSpecification_tblProduct">
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+    <End Role="tblSpecification" Type="Self.tblSpecification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblSpecification">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSpecification_tblSubCategory">
+    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
+    <End Role="tblSpecification" Type="Self.tblSpecification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubcategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tblSpecification">
+        <PropertyRef Name="SubcategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubCategory_tblCategory">
+    <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
+    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tblSubcategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblType_tblProduct">
+    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+    <End Role="tblType" Type="Self.tblType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduct">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblType">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblType_tblSubCategory">
+    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
+    <End Role="tblType" Type="Self.tblType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubcategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tblType">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JooleDataBaseModelStoreContainer">
+    <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblManufacturer" EntityType="Self.tblManufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSpecification" EntityType="Self.tblSpecification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSubcategory" EntityType="Self.tblSubcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblType" EntityType="Self.tblType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblProduct_tblManufacturer" Association="Self.FK_tblProduct_tblManufacturer">
+      <End Role="tblManufacturer" EntitySet="tblManufacturer" />
+      <End Role="tblProduct" EntitySet="tblProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduct_tblSubCategory" Association="Self.FK_tblProduct_tblSubCategory">
+      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
+      <End Role="tblProduct" EntitySet="tblProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduct_tblUser" Association="Self.FK_tblProduct_tblUser">
+      <End Role="tblUser" EntitySet="tblUser" />
+      <End Role="tblProduct" EntitySet="tblProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSpecification_tblProduct" Association="Self.FK_tblSpecification_tblProduct">
+      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblSpecification" EntitySet="tblSpecification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSpecification_tblSubCategory" Association="Self.FK_tblSpecification_tblSubCategory">
+      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
+      <End Role="tblSpecification" EntitySet="tblSpecification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubCategory_tblCategory" Association="Self.FK_tblSubCategory_tblCategory">
+      <End Role="tblCategory" EntitySet="tblCategory" />
+      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblType_tblProduct" Association="Self.FK_tblType_tblProduct">
+      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblType" EntitySet="tblType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblType_tblSubCategory" Association="Self.FK_tblType_tblSubCategory">
+      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
+      <End Role="tblType" EntitySet="tblType" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
