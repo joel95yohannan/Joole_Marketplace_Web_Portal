@@ -1,0 +1,5 @@
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Service\bin\Debug\Joole.Service.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Service\bin\Debug\Joole.Service.pdb
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Service\obj\Debug\Joole.Service.csproj.CoreCompileInputs.cache
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Service\obj\Debug\Joole.Service.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Service\obj\Debug\Joole.Service.pdb

@@ -1,0 +1,12 @@
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\Joole.Data.dll.config
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\Joole.Data.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\Joole.Data.pdb
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\EntityFramework.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\EntityFramework.xml
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\obj\Debug\Joole.Data.csproj.AssemblyReference.cache
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\obj\Debug\Joole.Data.csproj.CoreCompileInputs.cache
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\obj\Debug\Joole.Data.csproj.CopyComplete
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\obj\Debug\Joole.Data.dll
+C:\Users\Dorian\Desktop\TEMP\Joole_Marketplace_Web_Portal\JOOLE_WEBPORTAL\Joole.Data\obj\Debug\Joole.Data.pdb
