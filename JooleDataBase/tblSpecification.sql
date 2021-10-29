@@ -4,7 +4,7 @@
     [MaxValue]      DECIMAL (18, 2) NULL,
     [ProductID]     INT             NOT NULL,
     [SubCategoryID] INT             NOT NULL,
-    CONSTRAINT [FK_tblSpecification_tblProduct] FOREIGN KEY ([ProductID]) REFERENCES [tblProduct] ([ProductID]),
+    CONSTRAINT [FK_tblSpecification_tblProducts] FOREIGN KEY ([ProductID]) REFERENCES [tblProducts] ([ProductID]),
     CONSTRAINT [FK_tblSpecification_tblSubCategory] FOREIGN KEY ([SubCategoryID]) REFERENCES [tblSubCategory] ([SubCategoryID])
 );
 

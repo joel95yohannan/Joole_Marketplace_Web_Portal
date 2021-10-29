@@ -30,6 +30,9 @@ namespace Joole_MVC_Infrastructure
         public virtual DbSet<tblProduct> tblProducts { get; set; }
         public virtual DbSet<tblSpecification> tblSpecifications { get; set; }
         public virtual DbSet<tblSubcategory> tblSubcategories { get; set; }
+        public virtual DbSet<tblTechSpecsFan> tblTechSpecsFans { get; set; }
+        public virtual DbSet<tblTechSpecsToaster> tblTechSpecsToasters { get; set; }
+        public virtual DbSet<tblTechSpecsVacuum> tblTechSpecsVacuums { get; set; }
         public virtual DbSet<tblType> tblTypes { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
     }

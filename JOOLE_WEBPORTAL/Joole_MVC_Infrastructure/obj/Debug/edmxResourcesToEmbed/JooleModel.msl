@@ -19,7 +19,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="tblProducts">
       <EntityTypeMapping TypeName="JooleDataBaseModel.tblProduct">
-        <MappingFragment StoreEntitySet="tblProduct">
+        <MappingFragment StoreEntitySet="tblProducts">
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
@@ -50,6 +50,63 @@
           <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
           <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTechSpecsFans">
+      <EntityTypeMapping TypeName="JooleDataBaseModel.tblTechSpecsFan">
+        <MappingFragment StoreEntitySet="tblTechSpecsFan">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="AirFlowCFM" ColumnName="AirFlowCFM" />
+          <ScalarProperty Name="PowerWattsMax" ColumnName="PowerWattsMax" />
+          <ScalarProperty Name="PowerWattsMin" ColumnName="PowerWattsMin" />
+          <ScalarProperty Name="OperatingVoltageMax" ColumnName="OperatingVoltageMax" />
+          <ScalarProperty Name="OperatingVoltageMin" ColumnName="OperatingVoltageMin" />
+          <ScalarProperty Name="FanSpeedMax" ColumnName="FanSpeedMax" />
+          <ScalarProperty Name="FanSpeedMin" ColumnName="FanSpeedMin" />
+          <ScalarProperty Name="NumbSpeed" ColumnName="NumbSpeed" />
+          <ScalarProperty Name="MaxSound" ColumnName="MaxSound" />
+          <ScalarProperty Name="SweepDiameter" ColumnName="SweepDiameter" />
+          <ScalarProperty Name="FanWeight" ColumnName="FanWeight" />
+          <ScalarProperty Name="MountingLocation" ColumnName="MountingLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTechSpecsToasters">
+      <EntityTypeMapping TypeName="JooleDataBaseModel.tblTechSpecsToaster">
+        <MappingFragment StoreEntitySet="tblTechSpecsToaster">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="NumOfPrograms" ColumnName="NumOfPrograms" />
+          <ScalarProperty Name="PowerWattsMax" ColumnName="PowerWattsMax" />
+          <ScalarProperty Name="PowerWattsMin" ColumnName="PowerWattsMin" />
+          <ScalarProperty Name="OperatingVoltageMax" ColumnName="OperatingVoltageMax" />
+          <ScalarProperty Name="OperatingVoltageMin" ColumnName="OperatingVoltageMin" />
+          <ScalarProperty Name="HeatMax" ColumnName="HeatMax" />
+          <ScalarProperty Name="HeatMin" ColumnName="HeatMin" />
+          <ScalarProperty Name="OutputPerHour" ColumnName="OutputPerHour" />
+          <ScalarProperty Name="SlotWidth" ColumnName="SlotWidth" />
+          <ScalarProperty Name="ToasterHeight" ColumnName="ToasterHeight" />
+          <ScalarProperty Name="ToasterWeight" ColumnName="ToasterWeight" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTechSpecsVacuums">
+      <EntityTypeMapping TypeName="JooleDataBaseModel.tblTechSpecsVacuum">
+        <MappingFragment StoreEntitySet="tblTechSpecsVacuum">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="AirFlowCFM" ColumnName="AirFlowCFM" />
+          <ScalarProperty Name="PowerWattsMax" ColumnName="PowerWattsMax" />
+          <ScalarProperty Name="PowerWattsMin" ColumnName="PowerWattsMin" />
+          <ScalarProperty Name="OperatingVoltageMax" ColumnName="OperatingVoltageMax" />
+          <ScalarProperty Name="OperatingVoltageMin" ColumnName="OperatingVoltageMin" />
+          <ScalarProperty Name="FanSpeedMax" ColumnName="FanSpeedMax" />
+          <ScalarProperty Name="FanSpeedMin" ColumnName="FanSpeedMin" />
+          <ScalarProperty Name="MaxSound" ColumnName="MaxSound" />
+          <ScalarProperty Name="CleaningWidth" ColumnName="CleaningWidth" />
+          <ScalarProperty Name="AttachmentReach" ColumnName="AttachmentReach" />
+          <ScalarProperty Name="VacuumWeight" ColumnName="VacuumWeight" />
+          <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -82,6 +82,15 @@
     <Compile Include="tblSubcategory.cs">
       <DependentUpon>JooleModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblTechSpecsFan.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTechSpecsToaster.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTechSpecsVacuum.cs">
+      <DependentUpon>JooleModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblType.cs">
       <DependentUpon>JooleModel.tt</DependentUpon>
     </Compile>
@@ -90,29 +99,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="JooleModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>JooleModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="JooleModel.edmx.diagram">
       <DependentUpon>JooleModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JooleModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>JooleModel.Context.cs</LastGenOutput>
-      <DependentUpon>JooleModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="JooleModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JooleModel.edmx</DependentUpon>
-      <LastGenOutput>JooleModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -122,6 +117,18 @@
       <Project>{5a4c9efa-65a7-4012-81af-05da13aa0804}</Project>
       <Name>Joole_MVC_Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JooleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+      <LastGenOutput>JooleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="JooleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleModel.edmx</DependentUpon>
+      <LastGenOutput>JooleModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

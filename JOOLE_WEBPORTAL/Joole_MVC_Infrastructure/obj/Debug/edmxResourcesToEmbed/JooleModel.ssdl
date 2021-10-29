@@ -14,7 +14,7 @@
     <Property Name="ManufacturerID" Type="int" Nullable="false" />
     <Property Name="ManufacturerName" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblProduct">
+  <EntityType Name="tblProducts">
     <Key>
       <PropertyRef Name="ProductID" />
     </Key>
@@ -47,6 +47,60 @@
     <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
     <Property Name="CategoryID" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="tblTechSpecsFan">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="AirFlowCFM" Type="int" />
+    <Property Name="PowerWattsMax" Type="int" />
+    <Property Name="PowerWattsMin" Type="int" />
+    <Property Name="OperatingVoltageMax" Type="int" />
+    <Property Name="OperatingVoltageMin" Type="int" />
+    <Property Name="FanSpeedMax" Type="int" />
+    <Property Name="FanSpeedMin" Type="int" />
+    <Property Name="NumbSpeed" Type="int" />
+    <Property Name="MaxSound" Type="int" />
+    <Property Name="SweepDiameter" Type="int" />
+    <Property Name="FanWeight" Type="int" />
+    <Property Name="MountingLocation" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblTechSpecsToaster">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="NumOfPrograms" Type="int" />
+    <Property Name="PowerWattsMax" Type="int" />
+    <Property Name="PowerWattsMin" Type="int" />
+    <Property Name="OperatingVoltageMax" Type="int" />
+    <Property Name="OperatingVoltageMin" Type="int" />
+    <Property Name="HeatMax" Type="int" />
+    <Property Name="HeatMin" Type="int" />
+    <Property Name="OutputPerHour" Type="int" />
+    <Property Name="SlotWidth" Type="int" />
+    <Property Name="ToasterHeight" Type="int" />
+    <Property Name="ToasterWeight" Type="int" />
+    <Property Name="Slot" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblTechSpecsVacuum">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="AirFlowCFM" Type="int" />
+    <Property Name="PowerWattsMax" Type="int" />
+    <Property Name="PowerWattsMin" Type="int" />
+    <Property Name="OperatingVoltageMax" Type="int" />
+    <Property Name="OperatingVoltageMin" Type="int" />
+    <Property Name="FanSpeedMax" Type="int" />
+    <Property Name="FanSpeedMin" Type="int" />
+    <Property Name="MaxSound" Type="int" />
+    <Property Name="CleaningWidth" Type="int" />
+    <Property Name="AttachmentReach" Type="int" />
+    <Property Name="VacuumWeight" Type="int" />
+    <Property Name="FormFactor" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="tblType">
     <Key>
       <PropertyRef Name="TypeID" />
@@ -67,47 +121,47 @@
     <Property Name="UserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="UserImage" Type="image" />
   </EntityType>
-  <Association Name="FK_tblProduct_tblManufacturer">
+  <Association Name="FK_tblProducts_tblManufacturer">
     <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblManufacturer">
         <PropertyRef Name="ManufacturerID" />
       </Principal>
-      <Dependent Role="tblProduct">
+      <Dependent Role="tblProducts">
         <PropertyRef Name="ManufacturerID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblProduct_tblSubCategory">
+  <Association Name="FK_tblProducts_tblSubCategory">
     <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblSubcategory">
         <PropertyRef Name="SubCategoryID" />
       </Principal>
-      <Dependent Role="tblProduct">
+      <Dependent Role="tblProducts">
         <PropertyRef Name="SubCategoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblProduct_tblUser">
+  <Association Name="FK_tblProducts_tblUser">
     <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblUser">
         <PropertyRef Name="UserID" />
       </Principal>
-      <Dependent Role="tblProduct">
+      <Dependent Role="tblProducts">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblSpecification_tblProduct">
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+  <Association Name="FK_tblSpecification_tblProducts">
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
     <End Role="tblSpecification" Type="Self.tblSpecification" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblProduct">
+      <Principal Role="tblProducts">
         <PropertyRef Name="ProductID" />
       </Principal>
       <Dependent Role="tblSpecification">
@@ -139,11 +193,47 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblType_tblProduct">
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
+  <Association Name="FK_tblTechSpecsFan_tblProducts">
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
+    <End Role="tblTechSpecsFan" Type="Self.tblTechSpecsFan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblProducts">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblTechSpecsFan">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTechSpecsToaster_tblProducts">
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
+    <End Role="tblTechSpecsToaster" Type="Self.tblTechSpecsToaster" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblProducts">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblTechSpecsToaster">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTechSpecsVacuum_tblProducts">
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
+    <End Role="tblTechSpecsVacuum" Type="Self.tblTechSpecsVacuum" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblProducts">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tblTechSpecsVacuum">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblType_tblProducts">
+    <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
     <End Role="tblType" Type="Self.tblType" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblProduct">
+      <Principal Role="tblProducts">
         <PropertyRef Name="ProductID" />
       </Principal>
       <Dependent Role="tblType">
@@ -166,25 +256,28 @@
   <EntityContainer Name="JooleDataBaseModelStoreContainer">
     <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblManufacturer" EntityType="Self.tblManufacturer" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProducts" EntityType="Self.tblProducts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblSpecification" EntityType="Self.tblSpecification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblSubcategory" EntityType="Self.tblSubcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTechSpecsFan" EntityType="Self.tblTechSpecsFan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTechSpecsToaster" EntityType="Self.tblTechSpecsToaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTechSpecsVacuum" EntityType="Self.tblTechSpecsVacuum" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblType" EntityType="Self.tblType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_tblProduct_tblManufacturer" Association="Self.FK_tblProduct_tblManufacturer">
+    <AssociationSet Name="FK_tblProducts_tblManufacturer" Association="Self.FK_tblProducts_tblManufacturer">
       <End Role="tblManufacturer" EntitySet="tblManufacturer" />
-      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblProducts" EntitySet="tblProducts" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblProduct_tblSubCategory" Association="Self.FK_tblProduct_tblSubCategory">
+    <AssociationSet Name="FK_tblProducts_tblSubCategory" Association="Self.FK_tblProducts_tblSubCategory">
       <End Role="tblSubcategory" EntitySet="tblSubcategory" />
-      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblProducts" EntitySet="tblProducts" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblProduct_tblUser" Association="Self.FK_tblProduct_tblUser">
+    <AssociationSet Name="FK_tblProducts_tblUser" Association="Self.FK_tblProducts_tblUser">
       <End Role="tblUser" EntitySet="tblUser" />
-      <End Role="tblProduct" EntitySet="tblProduct" />
+      <End Role="tblProducts" EntitySet="tblProducts" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblSpecification_tblProduct" Association="Self.FK_tblSpecification_tblProduct">
-      <End Role="tblProduct" EntitySet="tblProduct" />
+    <AssociationSet Name="FK_tblSpecification_tblProducts" Association="Self.FK_tblSpecification_tblProducts">
+      <End Role="tblProducts" EntitySet="tblProducts" />
       <End Role="tblSpecification" EntitySet="tblSpecification" />
     </AssociationSet>
     <AssociationSet Name="FK_tblSpecification_tblSubCategory" Association="Self.FK_tblSpecification_tblSubCategory">
@@ -195,8 +288,20 @@
       <End Role="tblCategory" EntitySet="tblCategory" />
       <End Role="tblSubcategory" EntitySet="tblSubcategory" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblType_tblProduct" Association="Self.FK_tblType_tblProduct">
-      <End Role="tblProduct" EntitySet="tblProduct" />
+    <AssociationSet Name="FK_tblTechSpecsFan_tblProducts" Association="Self.FK_tblTechSpecsFan_tblProducts">
+      <End Role="tblProducts" EntitySet="tblProducts" />
+      <End Role="tblTechSpecsFan" EntitySet="tblTechSpecsFan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTechSpecsToaster_tblProducts" Association="Self.FK_tblTechSpecsToaster_tblProducts">
+      <End Role="tblProducts" EntitySet="tblProducts" />
+      <End Role="tblTechSpecsToaster" EntitySet="tblTechSpecsToaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTechSpecsVacuum_tblProducts" Association="Self.FK_tblTechSpecsVacuum_tblProducts">
+      <End Role="tblProducts" EntitySet="tblProducts" />
+      <End Role="tblTechSpecsVacuum" EntitySet="tblTechSpecsVacuum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblType_tblProducts" Association="Self.FK_tblType_tblProducts">
+      <End Role="tblProducts" EntitySet="tblProducts" />
       <End Role="tblType" EntitySet="tblType" />
     </AssociationSet>
     <AssociationSet Name="FK_tblType_tblSubCategory" Association="Self.FK_tblType_tblSubCategory">

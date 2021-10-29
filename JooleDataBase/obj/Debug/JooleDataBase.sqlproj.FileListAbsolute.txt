@@ -10,3 +10,9 @@ C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_We
 C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.sqlproj.AssemblyReference.cache
 C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.dll
 C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week4\10-21-2021\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.pdb
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.dacpac
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.dll
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\bin\Debug\JooleDataBase.pdb
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.sqlproj.AssemblyReference.cache
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.dll
+C:\Users\joel9\OneDrive\Desktop\OPT\Itlize\Week5\Joole_Marketplace_Web_Portal\JooleDataBase\obj\Debug\JooleDataBase.pdb

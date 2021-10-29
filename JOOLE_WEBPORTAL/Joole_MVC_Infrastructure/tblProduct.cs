@@ -37,6 +37,9 @@ namespace Joole_MVC_Infrastructure
         public virtual tblUser tblUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblSpecification> tblSpecifications { get; set; }
+        public virtual tblTechSpecsFan tblTechSpecsFan { get; set; }
+        public virtual tblTechSpecsToaster tblTechSpecsToaster { get; set; }
+        public virtual tblTechSpecsVacuum tblTechSpecsVacuum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblType> tblTypes { get; set; }
     }

@@ -59,12 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="tblUser.sql" />
-    <Build Include="tblProduct.sql" />
     <Build Include="tblManufacturer.sql" />
     <Build Include="tblSubCategory.sql" />
     <Build Include="tblCategory.sql" />
     <Build Include="tblType.sql" />
     <Build Include="tblSpecification.sql" />
+    <Build Include="tblTechSpecsVacuum.sql" />
+    <Build Include="tblTechSpecsToaster.sql" />
+    <Build Include="tblProducts.sql" />
+    <Build Include="tblTechSpecsFan.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />

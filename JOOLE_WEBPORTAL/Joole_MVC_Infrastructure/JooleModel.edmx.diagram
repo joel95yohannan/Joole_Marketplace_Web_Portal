@@ -4,20 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7f1490beba264558a934c02920dca038" Name="Diagram1">
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblCategory" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblManufacturer" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblProduct" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblSpecification" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblSubcategory" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblType" Width="1.5" PointX="10.5" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDataBaseModel.tblUser" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+      <Diagram DiagramId="d53ccf6d0e8849a68d32c0ffca1af0e1" Name="Diagram1">
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblCategory" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblManufacturer" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblProduct" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblSpecification" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblSubcategory" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblTechSpecsFan" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblTechSpecsToaster" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblTechSpecsVacuum" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblType" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDataBaseModel.tblUser" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <AssociationConnector Association="JooleDataBaseModel.FK_tblSubCategory_tblCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="JooleDataBaseModel.FK_tblProduct_tblManufacturer" ManuallyRouted="false" />
-        <AssociationConnector Association="JooleDataBaseModel.FK_tblProduct_tblSubCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="JooleDataBaseModel.FK_tblProduct_tblUser" ManuallyRouted="false" />
-        <AssociationConnector Association="JooleDataBaseModel.FK_tblSpecification_tblProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="JooleDataBaseModel.FK_tblType_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblProducts_tblManufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblProducts_tblSubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblProducts_tblUser" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblSpecification_tblProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblTechSpecsFan_tblProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblTechSpecsToaster_tblProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblTechSpecsVacuum_tblProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="JooleDataBaseModel.FK_tblType_tblProducts" ManuallyRouted="false" />
         <AssociationConnector Association="JooleDataBaseModel.FK_tblSpecification_tblSubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="JooleDataBaseModel.FK_tblType_tblSubCategory" ManuallyRouted="false" />
       </Diagram>
