@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDetailRepository.cs" />
+    <Compile Include="IProductRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="POCOClasses\FanSpecDetailUI.cs" />
+    <Compile Include="POCOClasses\ProductsUI.cs" />
     <Compile Include="POCOClasses\ToasterSpecDetailUI.cs" />
     <Compile Include="POCOClasses\UserUI.cs" />
     <Compile Include="POCOClasses\VacuumSpecDetailUI.cs" />

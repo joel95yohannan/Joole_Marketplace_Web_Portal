@@ -1,0 +1,87 @@
+﻿table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #F3F3F3;
+    border-color: lightgrey;
+    padding: 6px;
+}
+
+/*SideBar*/
+#sidebar {
+    margin: 5px 15px 5px 5px;
+    width: 260px;
+}
+
+#Min, #Max {
+    width: 30%;
+}
+
+.minMax {
+    width: 30px;
+}
+
+.slider {
+    width: 70%;
+    display: inline-block;
+}
+
+.searchOptions {
+    width: 200px;
+    height: 600px;
+    float: left;
+}
+
+.sidebarButton {
+    background-color: #75DDFB;
+    color: white;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+    .sidebarButton:hover {
+        background-color: grey;
+    }
+
+.sidebarSpecs2 input[type="range"] {
+    width: 55%;
+    vertical-align: central;
+}
+
+.sidebarSpecs2 input[type="number"] {
+    width: 45px;
+}
+
+.sidebarSpecs2 p {
+    margin: 10px;
+}
+
+/*Gallery*/
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+div.desc {
+    padding: 5px;
+    text-align: center;
+}
+
+.addTo {
+    background-color: #0B66BE;
+    color: white;
+    margin-left: 20px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+}

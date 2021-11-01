@@ -1,0 +1,182 @@
+﻿@model List<Joole_MVC_Core.POCOClasses.ProductsUI>
+
+@{
+    ViewBag.Title = "Fans";
+}
+
+<link href="~/Content/ProductStyles/ProductSum.css" rel="Stylesheet" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [25, 75],
+            slide: function (event, ui) {
+                $("#amount1").val(ui.values[0]);
+                $("#amount2").val(ui.values[1]);
+            }
+        });
+        $("#amount1").val($("#slider-range").slider("values", 0));
+        $("#amount2").val($("#slider-range").slider("values", 1));
+    });
+    $(function () {
+        $("#slider-range1").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [25, 75],
+            slide: function (event, ui) {
+                $("#amount3").val(ui.values[0]);
+                $("#amount4").val(ui.values[1]);
+            }
+        });
+        $("#amount3").val($("#slider-range1").slider("values", 0));
+        $("#amount4").val($("#slider-range1").slider("values", 1));
+    });
+    $(function () {
+        $("#slider-range2").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [25, 75],
+            slide: function (event, ui) {
+                $("#amount5").val(ui.values[0]);
+                $("#amount6").val(ui.values[1]);
+            }
+        });
+        $("#amount5").val($("#slider-range2").slider("values", 0));
+        $("#amount6").val($("#slider-range2").slider("values", 1));
+    });
+    $(function () {
+        $("#slider-range3").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [25, 75],
+            slide: function (event, ui) {
+                $("#amount7").val(ui.values[0]);
+                $("#amount8").val(ui.values[1]);
+            }
+        });
+        $("#amount7").val($("#slider-range3").slider("values", 0));
+        $("#amount8").val($("#slider-range3").slider("values", 1));
+    });
+</script>
+<br /><br />
+<div class="pageContainer">
+
+    <div class="item1">
+        <div id="sidebar" class="searchOptions">
+            <form name="filter" action="#">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <div style="display:inline-block; padding-right:75px">Search:</div>
+                            <button class="sidebarButton">Save</button>
+                            <input type="button" value="Clear" class="sidebarButton" onclick="this.form.reset();">
+                        </td>
+                    </tr>
+                    <tr style="text-align:center"><td>Product</td><td>Project</td></tr>
+                    <tr><td colspan="2">Product Type</td></tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="display:inline-block">
+                                <div style="display:inline-block; padding-right:2px">Model Year:</div>
+                                <input id="Min" type="number" /> - <input id="Max" type="number" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2">Technical Specifications</td></tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="sidebarSpecs2">
+                                <p>Airflow(CFM)</p>
+                                <input type="text" id="amount1" class="minMax" readonly style="border:0;">
+                                <div id="slider-range" class="slider"></div>
+                                <input type="text" id="amount2" class="minMax" readonly style="border:0;">
+                                <br />
+                                <p>Max Power(W)</p>
+                                <input type="text" id="amount3" class="minMax" readonly style="border:0;">
+                                <div id="slider-range1" class="slider"></div>
+                                <input type="text" id="amount4" class="minMax" readonly style="border:0;">
+                                <br />
+                                <p>Sound at Max Speed(dBA)</p>
+                                <input type="text" id="amount5" class="minMax" readonly style="border:0;">
+                                <div id="slider-range2" class="slider"></div>
+                                <input type="text" id="amount6" class="minMax" readonly style="border:0;">
+                                <br />
+                                <p>Fan Sweep Diameter(in)</p>
+                                <input type="text" id="amount7" class="minMax" readonly style="border:0;">
+                                <div id="slider-range3" class="slider"></div>
+                                <input type="text" id="amount8" class="minMax" readonly style="border:0;">
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="item2">
+        <div style="display:inline-block;"><text>Mechanical > </text> <text>Fans</text></div>
+    </div>
+    <div class="item3">
+
+        @{var productName = Html.DisplayFor(modelItem => Model.ElementAt(0).ProductName);
+            var imgName = "~/Images/" + productName + ".jpg"; }
+
+        <div class="gallery">
+            <a onclick="location.href='@Url.Action("Xfan", "ProductDetail")'" href="#">
+                <img src="@Url.Content(imgName)" alt="Fan" width="600" height="400">
+            </a>
+            <div class="desc">
+                @Html.DisplayFor(modelItem => Model.ElementAt(0).ProductName)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(0).Series)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(0).Model)<br />
+                <text>Tech Specs</text><br />
+                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <button class="addTo">Add to</button>
+            </div>
+        </div>
+
+        @{var productName1 = Html.DisplayFor(modelItem => Model.ElementAt(1).ProductName);
+            var imgName1 = "~/Images/" + productName1 + ".jpg"; }
+
+        <div class="gallery">
+            <a onclick="location.href='@Url.Action("Profan", "ProductDetail")'" href="#">
+                <img src="@Url.Content(imgName1)" alt="Fan" width="600" height="400">
+            </a>
+            <div class="desc">
+                @Html.DisplayFor(modelItem => Model.ElementAt(1).ProductName)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(1).Series)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(1).Model)<br />
+                <text>Tech Specs</text><br />
+                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <button class="addTo">Add to</button>
+            </div>
+        </div>
+
+        @{var productName2 = Html.DisplayFor(modelItem => Model.ElementAt(2).ProductName);
+            var imgName2 = "~/Images/" + productName2 + ".jpg"; }
+
+        <div class="gallery">
+            <a onclick="location.href='@Url.Action("Sixtysevenfan", "ProductDetail")'" href="#">
+                <img src="@Url.Content(imgName2)" alt="Fan" width="600" height="400">
+            </a>
+            <div class="desc">
+                @Html.DisplayFor(modelItem => Model.ElementAt(2).ProductName)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(2).Series)<br />
+                @Html.DisplayFor(modelItem => Model.ElementAt(2).Model)<br />
+                <text>Tech Specs</text><br />
+                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <button class="addTo">Add to</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

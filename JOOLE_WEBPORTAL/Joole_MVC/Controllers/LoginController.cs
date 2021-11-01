@@ -52,7 +52,7 @@ namespace Joole_MVC.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("About", "Home");
+                    return RedirectToAction("Index", "SearchPage");
                 }
             }
         }

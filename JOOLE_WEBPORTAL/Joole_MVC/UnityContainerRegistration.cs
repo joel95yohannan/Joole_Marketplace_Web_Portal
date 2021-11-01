@@ -19,6 +19,7 @@ namespace Joole_MVC
             // Register the dependency
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IDetailRepository, DetailRepository>();
+            container.RegisterType<IProductRepository, ProductsRepository>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             return container;

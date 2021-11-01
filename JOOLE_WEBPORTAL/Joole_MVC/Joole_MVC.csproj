@@ -151,6 +151,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\ProductSummaryController.cs" />
+    <Compile Include="Controllers\SearchPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -163,14 +165,26 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\joole-removebg-preview-removebg-preview.png" />
+    <Content Include="Content\Images\joole-removebg-preview.png" />
     <Content Include="Content\joolelogo.png" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\NavBar\navBar.css" />
+    <Content Include="Content\ProductStyles\ProductSum.css" />
     <Content Include="Content\profile.png" />
+    <Content Include="Content\SearchPage\searchPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\1967 Fan.jpg" />
+    <Content Include="Images\Pro Fan.jpg" />
+    <Content Include="Images\Sanko V6 Vacuum.jpg" />
+    <Content Include="Images\Shark UL Vacuum.jpg" />
+    <Content Include="Images\Snko 41 Toasters.jpg" />
+    <Content Include="Images\Snko 42 Toasters.jpg" />
+    <Content Include="Images\Snko 43 Toasters.jpg" />
+    <Content Include="Images\Wing F9 Vacuum.jpg" />
+    <Content Include="Images\X FAN.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -209,6 +223,10 @@
     <Content Include="Views\ProductDetail\Stwotoaster.cshtml" />
     <Content Include="Views\ProductDetail\Sthreetoaster.cshtml" />
     <Content Include="Views\Login\LoginPage.cshtml" />
+    <Content Include="Views\SearchPage\Index.cshtml" />
+    <Content Include="Views\ProductSummary\Fans.cshtml" />
+    <Content Include="Views\ProductSummary\Vacuums.cshtml" />
+    <Content Include="Views\ProductSummary\Toasters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
