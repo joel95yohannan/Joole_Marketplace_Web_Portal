@@ -19,6 +19,9 @@ namespace Joole_MVC
 
             //register dependency, when the application starts
             UnityContainerRegistration.InitialiseContainer();
+
+            //register details dependency, when the application starts
+            //UnityContainerRegistration.InitialiseContainer2();
         }
     }
 }

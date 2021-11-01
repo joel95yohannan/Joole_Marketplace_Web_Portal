@@ -1,0 +1,17 @@
+﻿.navbar {
+    display:inline-block;
+    background-image: linear-gradient(to bottom, #4682b4, #ffffff);
+    border-bottom: none;
+    color: white;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom:10px;
+}
+
+#dropdown {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5%;
+}

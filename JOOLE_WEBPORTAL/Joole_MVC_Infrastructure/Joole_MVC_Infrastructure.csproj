@@ -66,6 +66,7 @@
       <DependentUpon>JooleModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DetailRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="tblCategory.cs">
       <DependentUpon>JooleModel.tt</DependentUpon>

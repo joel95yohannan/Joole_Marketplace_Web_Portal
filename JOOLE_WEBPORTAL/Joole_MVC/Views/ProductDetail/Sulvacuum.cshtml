@@ -1,0 +1,165 @@
+﻿@model List<Joole_MVC_Core.POCOClasses.VacuumSpecDetailUI>
+
+@{
+    ViewBag.Title = "Sulvacuum";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .headbar2 {
+            display: inline-block;
+            background-color: #f7f7f7;
+            background-image: linear-gradient(white, #f7f7f7);
+            width: 134%;
+            height: 60px;
+            margin-left: -190px;
+            padding-top: 30px;
+            padding-left: 200px;
+            color: #26619c;
+        }
+
+        .heading {
+            color: #26619c;
+            padding-left: 5px;
+        }
+
+        .labels {
+            display: inline-block;
+            background-color: lightgray;
+            width: 185px;
+            height: 30px;
+            padding-top: 6px;
+            padding-left: 5px;
+            font-weight: bolder;
+        }
+
+        .la {
+            display: inline-block;
+            width: 185px;
+            background-color: lightgray;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            margin-top: -5px;
+            padding-left: 5px;
+            font-weight: bolder;
+        }
+
+        .subla {
+            display: inline-block;
+            width: 60px;
+            background-color: lightgray;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            margin-top: -5px;
+            padding-left: 5px;
+            font-weight: bolder;
+            margin-left: -4px;
+        }
+
+        .value {
+            display: inline-block;
+            width: 271px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+            margin-left: -5px;
+            padding-left: 10px;
+            padding-bottom: 3px;
+            font-weight: normal;
+        }
+
+        .subvalue {
+            display: inline-block;
+            width: 76px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+            margin-left: -5px;
+            padding-left: 10px;
+            padding-bottom: 3px;
+            font-weight: normal;
+        }
+
+        .subvalue2 {
+            display: inline-block;
+            width: 76px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+            margin-left: -5px;
+            padding-left: 10px;
+            padding-bottom: 3px;
+            font-weight: normal;
+        }
+
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="headbar2">
+        <a href="">Product Summary</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Product Details</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Product Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Contact</a>
+    </div>
+
+    <h2 class="heading">Product Summary - Shark UL Vacuum</h2>
+    <div class="topBar">
+
+    </div>
+    <div class="column">
+        @if (Model.Any())
+        {
+            <label style="font-weight:normal; display: inline-block; margin-bottom:0px;width: 456px; height: 30px; padding-top: 6px; padding-left: 5px;border-style:solid;border-top-color:lightgray;border-bottom-color:lightgray;border-top-width:1px;border-bottom-width:1px;border-left-width:0px;border-right-style:hidden;">Description </label><br />
+
+            <label class="labels">Manufacturer </label> <label class="value">Lavenci </label><br />
+            <label class="la">Series </label> <label class="value">Shark I8 </label><br />
+            <label class="la">Model </label> <label class="value">SH789 </label><br />
+            <br />
+            <label style="font-weight:normal; display: inline-block; margin-bottom:0px;width: 456px; height: 30px; padding-top: 6px; padding-left: 5px;border-style:solid;border-top-color:lightgray;border-bottom-color:lightgray;border-top-width:1px;border-bottom-width:1px;border-left-width:0px;border-right-style:hidden;">Type </label><br />
+            <label class="labels">Use Type </label> <label class="value">Commercial </label><br />
+            <label class="la">Application </label> <label class="value">Indoor </label><br />
+            <label class="la">Form Factor </label> <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).FormFactor)</label><br />
+            <label class="la">Model Year </label> <label class="value">2017 </label><br />
+        }
+    </div>
+    <div class="column">
+        <label style="font-weight:normal; display: inline-block; margin-bottom:0px;width: 456px; height: 30px; padding-top: 6px; padding-left: 5px;border-style:solid;border-top-color:lightgray;border-bottom-color:lightgray;border-top-width:1px;border-bottom-width:1px;border-left-width:0px;border-right-style:hidden;">Technical Specifications </label><br />
+        <label class="labels">Air Flow (CFM) </label> <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).AirFlowCFM)</label><br />
+        <label class="la">Power (W) </label>
+        <label class="subla">Min</label>
+        <label class="subvalue">@Html.DisplayFor(modelItem => Model.ElementAt(1).PowerWattsMin)</label>
+        <label class="subla">Max</label>
+        <label class="subvalue2">@Html.DisplayFor(modelItem => Model.ElementAt(1).PowerWattsMax)</label><br />
+        <label class="la">Operating Voltage (VAC)</label>
+        <label class="subla">Min</label>
+        <label class="subvalue">@Html.DisplayFor(modelItem => Model.ElementAt(1).OperatingVoltageMin)</label>
+        <label class="subla">Max</label>
+        <label class="subvalue2">@Html.DisplayFor(modelItem => Model.ElementAt(1).OperatingVoltageMax)</label><br />
+        <label class="la">Fan speed (RPM)</label>
+        <label class="subla">Min</label>
+        <label class="subvalue">@Html.DisplayFor(modelItem => Model.ElementAt(1).FanSpeedMin)</label>
+        <label class="subla">Max</label>
+        <label class="subvalue2">@Html.DisplayFor(modelItem => Model.ElementAt(1).FanSpeedMax)</label><br />
+        <label class="la">Sound at max speed (dBA) </label>
+        <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).MaxSound)</label><br />
+        <label class="la">Cleaning Width (in) </label>
+        <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).CleaningWidth)</label><br />
+        <label class="la">Attachment Reach (lbs) </label>
+        <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).AttachmentReach)</label><br />
+        <label class="la">Weight </label>
+        <label class="value">@Html.DisplayFor(modelItem => Model.ElementAt(1).VacuumWeight)</label><br />
+    </div>
+</body>
+</html>
+

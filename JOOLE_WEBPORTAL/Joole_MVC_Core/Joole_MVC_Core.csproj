@@ -51,8 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDetailRepository.cs" />
     <Compile Include="IUserRepository.cs" />
+    <Compile Include="POCOClasses\FanSpecDetailUI.cs" />
+    <Compile Include="POCOClasses\ToasterSpecDetailUI.cs" />
     <Compile Include="POCOClasses\UserUI.cs" />
+    <Compile Include="POCOClasses\VacuumSpecDetailUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
