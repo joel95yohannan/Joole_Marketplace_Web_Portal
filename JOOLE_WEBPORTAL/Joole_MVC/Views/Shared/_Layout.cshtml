@@ -4,39 +4,62 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/Content/NavBar/navBar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @if (IsSectionDefined("AddToHead"))
+    {
+@RenderSection("AddToHead", required: false)}
+
+    @RenderSection("AddToHeadAnotherWay", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+    @if (IsSectionDefined("noNavBar"))
+            {
+                @RenderSection("noNavBar",required: false)
+            }
+            else
+            {
+    <div class="head">
+        <div class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="@Url.Action("Login","Login")"> <img src="~/Content/Images/joole-removebg-preview-removebg-preview.png" style="width:50%" /></a>
+                </div>
+                <div class="col-sm-3 col-md-3 ">
+                    @using (Html.BeginForm("Index", "SearchPage", FormMethod.Post, new { @class = "navbar-form" }))
+                    {
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <div class="dropdown">
+                                        <select id="dropdown" class="form-control bg-info" name="categoryName">
+                                            <option>Category</option>
+                                            <option>Mechanical</option>
+                                            <option>Electrical</option>
+                                            <option>Stationary</option>
+                                            <option>Furniture</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input class="form-control" style="width:500px" placeholder="Search..." type="text" name="searchVal" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit" name="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                       
+                    }
+
+                </div>
+                
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+            }
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <div class="container body-content">@RenderBody()</div>
+
+    @Scripts.Render("~/bundles/jquery") @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

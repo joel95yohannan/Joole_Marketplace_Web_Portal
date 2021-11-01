@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "SearchPage";
+}
+@section AddToHead{
+    <link href="@Url.Content("~/Content/SearchPage/searchPage.css")" rel="stylesheet" type="text/css" />
+}
+@section noNavBar{
+    <div class="head" style="none">
+        </div>
+    }
+<div class="overlay">
+    <img src="~/Content/Images/joole-removebg-preview.png" />
+    <div class="row centered">
+        <h3 class="text-center">Building Product Selection Platform</h3>
+        <p>@ViewData["result"]</p>
+
+        <form action="Index" method="post">
+            <div class="dropdown bg-primary">
+                <select id="dropdown" class="form-control" name="categoryName">
+                    <option>Category</option>
+                    <option>Mechanical</option>
+                    <option>Electrical</option>
+                    <option>Stationary</option>
+                    <option>Furniture</option>
+                </select>
+            </div>
+                <input class="form-control" style="width:700px" placeholder="Search" type="text" name="searchVal" />
+
+                <button class="btn btn-primary" type="submit" name="submit"><i class="fas fa-search"></i></button>
+
+           
+        </form>
+
+
+    </div>
+</div>
+    
+
+
