@@ -58,7 +58,6 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="tblUser.sql" />
     <Build Include="tblManufacturer.sql" />
     <Build Include="tblSubCategory.sql" />
     <Build Include="tblCategory.sql" />
@@ -68,6 +67,7 @@
     <Build Include="tblTechSpecsToaster.sql" />
     <Build Include="tblProducts.sql" />
     <Build Include="tblTechSpecsFan.sql" />
+    <Build Include="tblUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />

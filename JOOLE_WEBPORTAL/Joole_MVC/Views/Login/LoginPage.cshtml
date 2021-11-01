@@ -1,0 +1,154 @@
+﻿@model Joole_MVC_Infrastructure.tblUser
+
+@{
+    Layout = null;
+}
+@*Citation: https://www.youtube.com/watch?v=dzT0bGUS6Fs*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JooleLogin</title>
+    <link href="~/Content/Login.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <a class="signup" onclick="SignUp()">Sign Up</a>
+        @*@Html.ActionLink("Sign Up", "Signup", "Login", new { @class="signup"})*@
+    </div>
+    <div class="containerrr">
+        @using (Html.BeginForm("Submit", "Login", FormMethod.Post))
+        {
+            <div class=" addon">
+                <img class="joolelogo" src="~/Content/Images/joole-removebg-preview-removebg-preview.png" />
+                <br /><br />
+                <h>Building Product Selection Platform</h>
+                <br /><br />
+
+                <div>
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "username", placeholder = "Username or Email" } })<i class='fas fa-user-alt'></i><br />
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    <br />
+                    @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "password1", placeholder = "Password" } })<i class="fa fa-lock"></i><br />
+                    @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                    @Html.DisplayFor(errorMess => errorMess.LoginFail)
+                    <br />
+                    <input class="login" type="submit" value="Log In">
+                </div>
+            </div>
+
+        }
+    </div>
+
+
+
+
+
+
+    @*Signup Page Pop Up*@
+    <div class="modal fade" id="ShowModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <p id="registeruser">Register as User</p>
+                    <div id="message1">
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span><strong>Your Registration Is Complete</strong>
+                        </div>
+                    </div>
+                    <div id="message2">
+                        <div class="alert alert-danger">
+                            <span class="glyphicon glyphicon-remove"></span><strong>Your Registration Is Not Complete</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form id="Registration">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="lableStyle">
+                                    <label>Image Preview</label><br />
+                                </div>
+                                <div class="profilepic">
+                                    <img id="profilepic" src="~/Content/profile.png" /><br />
+                                </div>
+                                <div class="lableStyle">
+                                    <label>Your Profile Pic</label><br />
+                                </div>
+                                <div class="lableStyle">
+                                    <input type="file" name="image" /><br />
+                                </div>
+                                <div>
+                                    <label>UserName:</label>
+                                    @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "aa", @id = "uname", placeholder = "Username" } })<br />
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    <label>Email Address:</label>
+                                    @Html.EditorFor(m => m.UserEmail, new { htmlAttributes = new { @class = "aa", @id = "emaill", placeholder = "Email ID" } })<br />
+                                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    <label>Password:</label>
+                                    @Html.EditorFor(m => m.UserPassword, new { htmlAttributes = new { @class = "aa", @id = "pwd", placeholder = "Password" } })<br />
+                                    @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    <label>Confirm Password:</label>
+                                    @Html.EditorFor(m => m.ConfirmPassword, new { htmlAttributes = new { @class = "aa", placeholder = "Password" } })<br />
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-info" id="signbut" type="submit" onclick="SaveForm()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function SignUp() {
+            $("#ShowModal").modal();
+            $("#message1").hide();
+            $("#message2").hide();
+        }
+        function SaveForm() {
+            var name = $("#uname").val();
+            var email = $("#emaill").val();
+            var pwd = $("#pwd").val();
+
+            if (name == "" || email == "" || pwd == "") {
+                $("#message1").hide();
+                $("#message2").show();
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Login/Registration",
+                data: $("#Registration").serialize() + "&name&email&pwd",
+                success: function (result) {
+                    $("#message1").show();
+                    $("#message2").hide();
+                    $("#Registration")[0].reset();
+
+
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

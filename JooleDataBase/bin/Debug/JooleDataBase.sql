@@ -41,88 +41,6 @@ USE [$(DatabaseName)];
 
 GO
 /*
-The column [dbo].[tblTechSpecsToaster].[HeaMin] is being dropped, data loss could occur.
-*/
-
-IF EXISTS (select top 1 1 from [dbo].[tblTechSpecsToaster])
-    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
-
-GO
-PRINT N'Dropping Foreign Key [dbo].[FK_tblTechSpecsToaster_tblProducts]...';
-
-
-GO
-ALTER TABLE [dbo].[tblTechSpecsToaster] DROP CONSTRAINT [FK_tblTechSpecsToaster_tblProducts];
-
-
-GO
-PRINT N'Starting rebuilding table [dbo].[tblTechSpecsToaster]...';
-
-
-GO
-BEGIN TRANSACTION;
-
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SET XACT_ABORT ON;
-
-CREATE TABLE [dbo].[tmp_ms_xx_tblTechSpecsToaster] (
-    [ProductID]           INT          NOT NULL,
-    [NumOfPrograms]       INT          NULL,
-    [PowerWattsMax]       INT          NULL,
-    [PowerWattsMin]       INT          NULL,
-    [OperatingVoltageMax] INT          NULL,
-    [OperatingVoltageMin] INT          NULL,
-    [HeatMax]             INT          NULL,
-    [HeatMin]             INT          NULL,
-    [OutputPerHour]       INT          NULL,
-    [SlotWidth]           INT          NULL,
-    [ToasterHeight]       INT          NULL,
-    [ToasterWeight]       INT          NULL,
-    [Slot]                VARCHAR (20) NULL,
-    PRIMARY KEY CLUSTERED ([ProductID] ASC)
-);
-
-IF EXISTS (SELECT TOP 1 1 
-           FROM   [dbo].[tblTechSpecsToaster])
-    BEGIN
-        INSERT INTO [dbo].[tmp_ms_xx_tblTechSpecsToaster] ([ProductID], [NumOfPrograms], [PowerWattsMax], [PowerWattsMin], [OperatingVoltageMax], [OperatingVoltageMin], [HeatMax], [OutputPerHour], [SlotWidth], [ToasterHeight], [ToasterWeight], [Slot])
-        SELECT   [ProductID],
-                 [NumOfPrograms],
-                 [PowerWattsMax],
-                 [PowerWattsMin],
-                 [OperatingVoltageMax],
-                 [OperatingVoltageMin],
-                 [HeatMax],
-                 [OutputPerHour],
-                 [SlotWidth],
-                 [ToasterHeight],
-                 [ToasterWeight],
-                 [Slot]
-        FROM     [dbo].[tblTechSpecsToaster]
-        ORDER BY [ProductID] ASC;
-    END
-
-DROP TABLE [dbo].[tblTechSpecsToaster];
-
-EXECUTE sp_rename N'[dbo].[tmp_ms_xx_tblTechSpecsToaster]', N'tblTechSpecsToaster';
-
-COMMIT TRANSACTION;
-
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_tblTechSpecsToaster_tblProducts]...';
-
-
-GO
-ALTER TABLE [dbo].[tblTechSpecsToaster] WITH NOCHECK
-    ADD CONSTRAINT [FK_tblTechSpecsToaster_tblProducts] FOREIGN KEY ([ProductID]) REFERENCES [dbo].[tblProducts] ([ProductID]);
-
-
-GO
-/*
 Post-Deployment Script Template							
 --------------------------------------------------------------------------------------
  This file contains SQL statements that will be appended to the build script.		
@@ -282,18 +200,6 @@ VALUES (TypeID, MinValue, MaxValue, ProductID, SubCategoryID);
 
 
 GO
-
-GO
-PRINT N'Checking existing data against newly created constraints';
-
-
-GO
-USE [$(DatabaseName)];
-
-
-GO
-ALTER TABLE [dbo].[tblTechSpecsToaster] WITH CHECK CHECK CONSTRAINT [FK_tblTechSpecsToaster_tblProducts];
-
 
 GO
 PRINT N'Update complete.';
