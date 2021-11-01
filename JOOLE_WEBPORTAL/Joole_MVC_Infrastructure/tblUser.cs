@@ -11,7 +11,8 @@ namespace Joole_MVC_Infrastructure
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,17 @@ namespace Joole_MVC_Infrastructure
         }
     
         public int UserID { get; set; }
+        [RequiredAttribute(ErrorMessage = "Please enter your username.")]
         public string UserName { get; set; }
+        [RequiredAttribute(ErrorMessage = "Please enter your email.")]
         public string UserEmail { get; set; }
+        [DataType(DataType.Password)]
+        [RequiredAttribute(ErrorMessage = "Please enter a valid password.")]
         public string UserPassword { get; set; }
+        [DataType(DataType.Password)]
+        [Compare("UserPassword", ErrorMessage = "Please confirm your password.")]
+        public string ConfirmPassword { get; set; }
+        public string LoginFail { get; set; }
         public byte[] UserImage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

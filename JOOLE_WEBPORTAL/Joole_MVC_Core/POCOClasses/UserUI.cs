@@ -9,6 +9,7 @@ namespace Joole_MVC_Core.POCOClasses
 {
     public class UserUI
     {   [Required]
+   
         public int UserID { get; set; }
         [Required]
         public string UserName { get; set; }

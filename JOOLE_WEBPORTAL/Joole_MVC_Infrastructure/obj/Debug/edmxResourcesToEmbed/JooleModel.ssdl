@@ -61,7 +61,7 @@
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="UserEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="UserPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -115,54 +115,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblSpecification_tblSubCategory">
-    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
-    <End Role="tblSpecification" Type="Self.tblSpecification" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblSubcategory">
-        <PropertyRef Name="SubCategoryID" />
-      </Principal>
-      <Dependent Role="tblSpecification">
-        <PropertyRef Name="SubcategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblSubCategory_tblCategory">
-    <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
-    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCategory">
-        <PropertyRef Name="CategoryID" />
-      </Principal>
-      <Dependent Role="tblSubcategory">
-        <PropertyRef Name="CategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblType_tblProduct">
-    <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
-    <End Role="tblType" Type="Self.tblType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblProduct">
-        <PropertyRef Name="ProductID" />
-      </Principal>
-      <Dependent Role="tblType">
-        <PropertyRef Name="ProductID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblType_tblSubCategory">
-    <End Role="tblSubcategory" Type="Self.tblSubcategory" Multiplicity="1" />
-    <End Role="tblType" Type="Self.tblType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblSubcategory">
-        <PropertyRef Name="SubCategoryID" />
-      </Principal>
-      <Dependent Role="tblType">
-        <PropertyRef Name="SubCategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="JooleDataBaseModelStoreContainer">
     <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblManufacturer" EntityType="Self.tblManufacturer" Schema="dbo" store:Type="Tables" />
@@ -186,22 +138,6 @@
     <AssociationSet Name="FK_tblSpecification_tblProduct" Association="Self.FK_tblSpecification_tblProduct">
       <End Role="tblProduct" EntitySet="tblProduct" />
       <End Role="tblSpecification" EntitySet="tblSpecification" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblSpecification_tblSubCategory" Association="Self.FK_tblSpecification_tblSubCategory">
-      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
-      <End Role="tblSpecification" EntitySet="tblSpecification" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblSubCategory_tblCategory" Association="Self.FK_tblSubCategory_tblCategory">
-      <End Role="tblCategory" EntitySet="tblCategory" />
-      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblType_tblProduct" Association="Self.FK_tblType_tblProduct">
-      <End Role="tblProduct" EntitySet="tblProduct" />
-      <End Role="tblType" EntitySet="tblType" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblType_tblSubCategory" Association="Self.FK_tblType_tblSubCategory">
-      <End Role="tblSubcategory" EntitySet="tblSubcategory" />
-      <End Role="tblType" EntitySet="tblType" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
