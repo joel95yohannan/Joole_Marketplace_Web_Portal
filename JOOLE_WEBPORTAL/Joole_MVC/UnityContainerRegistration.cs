@@ -18,9 +18,22 @@ namespace Joole_MVC
 
             // Register the dependency
             container.RegisterType<IUserRepository, UserRepository>();
+            container.RegisterType<IDetailRepository, DetailRepository>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             return container;
         }
+
+        //public static IUnityContainer InitialiseContainer2()
+        //{
+        //    //initialize the container
+        //    var container2 = new UnityContainer();
+
+        //    // Register the dependency
+        //    container2.RegisterType<IDetailRepository, DetailRepository>();
+
+        //    DependencyResolver.SetResolver(new UnityDependencyResolver(container2));
+        //    return container2;
+        //}
     }
 }
