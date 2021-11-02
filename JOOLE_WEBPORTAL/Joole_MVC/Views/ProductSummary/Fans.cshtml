@@ -64,7 +64,23 @@
         });
         $("#amount7").val($("#slider-range3").slider("values", 0));
         $("#amount8").val($("#slider-range3").slider("values", 1));
-    });
+    });    
+</script>
+<script>
+    function comparison() {
+        if ($("#compare1").is(":checked") && $("#compare2").is(":checked") && $("#compare3").is(":checked")) {
+            window.location.assign("https://localhost:44323/ProductComparison/Xps")
+        } else if ($("#compare1").is(":checked") && $("#compare2").is(":checked")) {
+            window.location.assign("https://localhost:44323/ProductComparison/Xp")
+        }
+        else if ($("#compare1").is(":checked") && $("#compare3").is(":checked")) {
+            window.location.assign("https://localhost:44323/ProductComparison/Xon")
+        }
+        else if ($("#compare2").is(":checked") && $("#compare3").is(":checked")) {
+            window.location.assign("https://localhost:44323/ProductComparison/Pon")
+        }
+    }
+
 </script>
 <br /><br />
       
@@ -139,7 +155,7 @@
                 @Html.DisplayFor(modelItem => Model.ElementAt(0).Series)<br />
                 @Html.DisplayFor(modelItem => Model.ElementAt(0).Model)<br />
                 <text>Tech Specs</text><br />
-                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <input name="compare" id="compare1" type="checkbox" /> <label for="compare">Compare</label>
                 <button class="addTo">Add to</button>
             </div>
         </div>
@@ -156,7 +172,7 @@
                 @Html.DisplayFor(modelItem => Model.ElementAt(1).Series)<br />
                 @Html.DisplayFor(modelItem => Model.ElementAt(1).Model)<br />
                 <text>Tech Specs</text><br />
-                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <input name="compare" id="compare2" type="checkbox" /> <label for="compare">Compare</label>
                 <button class="addTo">Add to</button>
             </div>
         </div>
@@ -173,10 +189,13 @@
                 @Html.DisplayFor(modelItem => Model.ElementAt(2).Series)<br />
                 @Html.DisplayFor(modelItem => Model.ElementAt(2).Model)<br />
                 <text>Tech Specs</text><br />
-                <input name="compare" id="compare" type="checkbox" /> <label for="compare">Compare</label>
+                <input name="compare" id="compare3" type="checkbox" /> <label for="compare">Compare</label>
                 <button class="addTo">Add to</button>
             </div>
         </div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br />
+        <input type="button" style="margin-left: 490px; background-color: #0B66BE; padding: 5px 10px 5px 10px; color: white; " value="Compare" onclick="comparison()">
 
 
     </div>

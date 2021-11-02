@@ -16,7 +16,7 @@ namespace Joole_MVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "LoginPage", id = UrlParameter.Optional }
+                defaults: new { controller = "ProductComparison", action = "Svu", id = UrlParameter.Optional }
             );
         }
     }

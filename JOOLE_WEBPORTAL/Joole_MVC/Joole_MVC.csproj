@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductComparisonController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductSummaryController.cs" />
     <Compile Include="Controllers\SearchPageController.cs" />
@@ -227,6 +228,18 @@
     <Content Include="Views\ProductSummary\Fans.cshtml" />
     <Content Include="Views\ProductSummary\Vacuums.cshtml" />
     <Content Include="Views\ProductSummary\Toasters.cshtml" />
+    <Content Include="Views\ProductComparison\Xp.cshtml" />
+    <Content Include="Views\ProductComparison\Xps.cshtml" />
+    <Content Include="Views\ProductComparison\Xon.cshtml" />
+    <Content Include="Views\ProductComparison\Pon.cshtml" />
+    <Content Include="Views\ProductComparison\Sot.cshtml" />
+    <Content Include="Views\ProductComparison\Soth.cshtml" />
+    <Content Include="Views\ProductComparison\Soh.cshtml" />
+    <Content Include="Views\ProductComparison\Sth.cshtml" />
+    <Content Include="Views\ProductComparison\Svuf.cshtml" />
+    <Content Include="Views\ProductComparison\Svu.cshtml" />
+    <Content Include="Views\ProductComparison\Svw.cshtml" />
+    <Content Include="Views\ProductComparison\Suw.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

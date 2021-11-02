@@ -25,9 +25,9 @@
             <div class="navbar navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a href="@Url.Action("Index", "SearchPage")"> <img src="~/Content/Images/joole-removebg-preview-removebg-preview.png" style="width:50%" /></a>
+                        <a href="@Url.Action("Index", "SearchPage")"> <img src="~/Content/Images/joole-removebg-preview-removebg-preview.png" style="width: 50%; margin-left: -180px; height:60px;width:110px;" /></a>
                     </div>
-                    <div class="col-sm-3 col-md-3 ">
+                    <div class="col-sm-3 col-md-3 " style="margin-left:300px;">
                         @using (Html.BeginForm("Index", "SearchPage", FormMethod.Post, new { @class = "navbar-form" }))
                         {
         <div class="input-group">

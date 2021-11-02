@@ -1,0 +1,150 @@
+﻿@model List<Joole_MVC_Core.POCOClasses.FanSpecDetailUI>
+
+@{
+    ViewBag.Title = "Xon";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .headbar2 {
+            display: inline-block;
+            background-color: #f7f7f7;
+            background-image: linear-gradient(white, #f7f7f7);
+            width: 134%;
+            height: 60px;
+            margin-left: -195px;
+            padding-top: 30px;
+            padding-left: 280px;
+            color: #26619c;
+        }
+
+        .imgtd {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #D8D8D8;
+            width: 230px;
+            height: 145px;
+            margin-top: 5px;
+        }
+
+        .infotd {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #D8D8D8;
+            width: 240px;
+            height: 30px;
+            font-weight: bolder;
+            padding-left: 5px;
+            padding-top: 4px;
+            background-color: #E8E8E8;
+            border-top-style: none;
+        }
+
+        .infotd2 {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #D8D8D8;
+            width: 230px;
+            height: 30px;
+            padding-left: 5px;
+            padding-top: 4px;
+            border-top-style: none;
+            border-left-style: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="headbar2">
+        <a onclick="location.href='@Url.Action("Fans", "ProductSummary")'" href="#">Mechanical > Fans > </a>
+        <a href="#">Compare</a>
+    </div>
+    <table style="margin-left:215px;">
+        <tr>
+            <td class="imgtd" style="border-right-style:none; width:240px;"></td>
+            <td class="imgtd"><img src="~/Images/X FAN.jpg" alt="XFan" width="220" height="140" style="margin-left:5px;"></td>
+            <td class="imgtd" style="border-left-style:none;"><img src="~/Images/1967 Fan.jpg" alt="XFan" width="220" height="140" style="margin-left:3px;"></td>
+        </tr>
+        <tr>
+            <td class="infotd" style="width: 700px;"><u>DESCRIPTION</u></td>
+        </tr>
+        <tr>
+            <td class="infotd">Manufacture</td>
+            <td class="infotd2">YYY</td>
+            <td class="infotd2">Minka</td>
+        </tr>
+        <tr>
+            <td class="infotd">Series</td>
+            <td class="infotd2">Haiku H</td>
+            <td class="infotd2">Della J</td>
+        </tr>
+        <tr>
+            <td class="infotd">Model</td>
+            <td class="infotd2">S3-1508</td>
+            <td class="infotd2">Jl0815</td>
+        </tr>
+        <tr>
+            <td class="infotd" style="width: 700px;"><u>TYPE</u></td>
+        </tr>
+        <tr>
+            <td class="infotd">User Type</td>
+            <td class="infotd2">Commercial</td>
+            <td class="infotd2">Commercial</td>
+        </tr>
+        <tr>
+            <td class="infotd">Application</td>
+            <td class="infotd2">Indoor</td>
+            <td class="infotd2">Indoor</td>
+        </tr>
+        <tr>
+            <td class="infotd">Mounting Location</td>
+            <td class="infotd2">Table</td>
+            <td class="infotd2">Roof</td>
+        </tr>
+        <tr>
+            <td class="infotd">Model Year</td>
+            <td class="infotd2">2015</td>
+            <td class="infotd2">2021</td>
+        </tr>
+        <tr>
+            <td class="infotd" style="width: 700px;"><u>TECHNICAL SPECIFICATIONS</u></td>
+        </tr>
+        <tr>
+            <td class="infotd">Air Flow (CFM)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(0).AirFlowCFM)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(2).AirFlowCFM)</td>
+        </tr>
+        <tr>
+            <td class="infotd">Number of fan speeds</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(0).NumbSpeed)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(2).NumbSpeed)</td>
+        </tr>
+        <tr>
+            <td class="infotd">Sound at max (dBA)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(0).MaxSound)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(2).MaxSound)</td>
+        </tr>
+        <tr>
+            <td class="infotd">Sweep Diameter (in)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(0).SweepDiameter)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(2).SweepDiameter)</td>
+        </tr>
+        <tr>
+            <td class="infotd">Weight (lbs)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(0).FanWeight)</td>
+            <td class="infotd2">@Html.DisplayFor(modelItem => Model.ElementAt(2).FanWeight)</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
+
